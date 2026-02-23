@@ -52,9 +52,24 @@
   background-color: var(--color-card-records);
 }
 
+.hero__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: flex-start;
+}
+
+.hero__card-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  color: var(--color-text-inverse);
+}
+
 .hero__card-title {
-  font-size: var(--text-xl);
+  font-size: var(--text-3xl);
   font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  text-align: left;
 }
 
 .hero__card-description {

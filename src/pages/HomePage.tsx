@@ -1,14 +1,20 @@
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import "./HomePage.css";
+import { FEATURE_CARDS } from "../components/sections/HeroSection";
 
 export function HomePage() {
   return (
     <main className="home-page">
-      <HeroSection />
+      <HeroSection
+        title="The Semantic Engine"
+        subtitle="Modular tools that add meaning to data and grow your research Data Space"
+        cards={FEATURE_CARDS}
+      />
 
       <FeatureSection
         title="Write clear data documentation"
+        imageSrc="/images/home_1.png"
         imageAlt="Data documentation interface"
       >
         <p>
@@ -23,6 +29,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Build data sharing agreements"
+        imageSrc="/images/home_2.png"
         imageAlt="Data sharing agreement form"
       >
         <p>
@@ -36,6 +43,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Write descriptive metadata"
+        imageSrc="/images/home_3.png"
         imageAlt="Metadata entry form"
       >
         <p>
@@ -54,6 +62,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Collect verified data"
+        imageSrc="/images/home4.png"
         imageAlt="Data verification interface"
       >
         <p>
@@ -64,6 +73,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Standardize data collection"
+        imageSrc="/images/home_5.png"
         imageAlt="Standardized data collection"
       >
         <p>

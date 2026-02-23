@@ -12,6 +12,10 @@
   margin: 0 auto;
 }
 
+.feature-section__inner--no-image {
+  grid-template-columns: 1fr;
+}
+
 .feature-section__title {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
@@ -31,6 +35,17 @@
 
 .feature-section__text p:last-child {
   margin-bottom: 0;
+}
+
+.feature-section__list {
+  list-style-type: disc;
+  padding-left: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+.feature-section__list li {
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
 }
 
 .feature-section__image img {

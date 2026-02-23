@@ -15,20 +15,18 @@ export function FeatureSection({
 }: FeatureSectionProps) {
   return (
     <section className="feature-section">
-      <div className="feature-section__inner">
+      <div
+        className={`feature-section__inner ${!imageSrc ? 'feature-section__inner--no-image' : ''}`}
+      >
         <div className="feature-section__content">
           <h2 className="feature-section__title">{title}</h2>
           <div className="feature-section__text">{children}</div>
         </div>
-        <div className="feature-section__image">
-          {imageSrc ? (
+        {imageSrc && (
+          <div className="feature-section__image">
             <img src={imageSrc} alt={imageAlt ?? title} />
-          ) : (
-            <div className="feature-section__placeholder">
-              <span>{imageAlt ?? title}</span>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
