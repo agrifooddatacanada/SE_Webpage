@@ -1,5 +1,5 @@
 .feature-section {
-  padding: var(--space-16) var(--container-padding);
+  padding: var(--space-8) var(--container-padding);
   background-color: var(--color-bg);
 }
 
@@ -35,6 +35,11 @@
 
 .feature-section__text p:last-child {
   margin-bottom: 0;
+}
+
+.feature-section__text a {
+  color: var(--color-primary-light);
+  text-decoration: underline;
 }
 
 .feature-section__list {
