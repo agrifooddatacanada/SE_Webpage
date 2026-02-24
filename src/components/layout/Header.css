@@ -3,7 +3,6 @@
   top: 0;
   z-index: 100;
   background-color: var(--color-bg);
-  overflow-x: hidden;
 }
 
 /* Removable alert banner */
@@ -65,7 +64,6 @@
 .header__nav-bar {
   padding: var(--space-6) var(--container-padding);
   min-height: 5rem;
-  overflow-x: hidden;
 }
 
 .header__inner {
@@ -145,13 +143,13 @@
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 160px;
-  margin-top: var(--space-1);
-  padding: var(--space-2);
+  max-width: var(--container-max);
+  padding: var(--space-1) var(--space-2) var(--space-2);
   background-color: var(--color-bg);
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-md);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  z-index: 101;
 }
 
 .header__dropdown-item {

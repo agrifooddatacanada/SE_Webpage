@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
@@ -8,10 +8,28 @@ const SOLUTIONS_ITEMS = [
   { path: '/solutions/records', label: 'Records' },
 ];
 
+const DROPDOWN_CLOSE_DELAY_MS = 200;
+
 export function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+
+  const openSolutions = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setSolutionsOpen(true);
+  };
+
+  const closeSolutions = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setSolutionsOpen(false);
+      closeTimeoutRef.current = null;
+    }, DROPDOWN_CLOSE_DELAY_MS);
+  };
 
   const isActive = (path: string) =>
     path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
@@ -71,8 +89,8 @@ export function Header() {
 
             <div
               className="header__dropdown"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
+              onMouseEnter={openSolutions}
+              onMouseLeave={closeSolutions}
             >
               <button
                 type="button"
