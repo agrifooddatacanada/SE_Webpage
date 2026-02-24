@@ -6,8 +6,8 @@ export interface FeatureCard {
   title: string;
   sectionLabel?: string;
   description: string;
-  buttonText: string;
-  buttonHref: string;
+  buttonText?: string;
+  buttonHref?: string;
   learnMoreHref: string;
   color: "schemas" | "agreements" | "records";
 }
@@ -15,6 +15,8 @@ interface HeroSectionProps {
   title?: string;
   subtitle?: React.ReactNode;
   cards?: FeatureCard[];
+  descriptions?: Record<string, string>;
+  showButtons?: boolean;
 }
 
 export const FEATURE_CARDS: FeatureCard[] = [
@@ -53,7 +55,13 @@ export const FEATURE_CARDS: FeatureCard[] = [
   },
 ];
 
-export function HeroSection({ title, subtitle, cards }: HeroSectionProps) {
+export function HeroSection({
+  title,
+  subtitle,
+  cards,
+  descriptions,
+  showButtons = true,
+}: HeroSectionProps) {
   return (
     <section className="hero">
       <div className="hero__content">
@@ -72,15 +80,23 @@ export function HeroSection({ title, subtitle, cards }: HeroSectionProps) {
                   </span>
                   <h2 className="hero__card-title">{card.title}</h2>
                 </div>
-                <p className="hero__card-description">{card.description}</p>
-                <Link
-                  to={card.buttonHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hero__card-button"
-                >
-                  {card.buttonText}
-                </Link>
+                <p className="hero__card-description">
+                  {descriptions?.[card.id] ?? card.description}
+                </p>
+                {showButtons && (
+                  <>
+                    {card.buttonHref && card.buttonText && (
+                      <Link
+                        to={card.buttonHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hero__card-button"
+                      >
+                        {card.buttonText}
+                      </Link>
+                    )}
+                  </>
+                )}
                 <Link to={card.learnMoreHref} className="hero__card-link">
                   Learn more
                 </Link>

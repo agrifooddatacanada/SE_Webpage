@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import "./AboutPage.css";
@@ -46,14 +47,9 @@ export function AboutPage() {
             <li>Using the Semantic Engine in your environment</li>
             <li>Training and onboarding for researchers and administrators</li>
           </ul>
-          <a
-            href="https://adc.uoguelph.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="partner-card__button"
-          >
+          <Link to="/services" className="partner-card__button">
             Partner with ADC
-          </a>
+          </Link>
         </div>
       </section>
       <FeatureSection title="What the Semantic Engine Enables">
@@ -101,9 +97,60 @@ export function AboutPage() {
 
       <HeroSection
         cards={FEATURE_CARDS}
+        descriptions={{
+          schemas:
+            "Create machine-readable data schemas through a guided, web-based experience. Export schemas in multiple formats and generate templates that accelerate harmonized data collection.",
+          agreements:
+            "Support controlled data sharing through questionnaires and license templates administered within a hosted research data space. Enable structured requests and agreement workflows for access-managed datasets.",
+          records:
+            "Produce machine-readable records from collected data—supporting structured outputs suitable for linked data and system-to-system exchange.",
+        }}
+        showButtons={false}
       />
-
-
+      <HeroSection
+        subtitle={
+          <>
+            <strong>Open Source & Deployable</strong>
+            <br />
+            All tools in The Semantic Engine are <strong>
+              open source
+            </strong>{" "}
+            and can be <strong>deployed in any research data space.</strong>
+          </>
+        }
+      />
+      <FeatureSection
+        title="History and stewardship"
+        imageSrc="/images/about_history&stewardship.png "
+        imageAlt="History and stewardship interface"
+      >
+        <p>
+          The Semantic Engine is a project under development within{" "}
+          <strong>Agri-Food Data Canada</strong>. It was originally funded at
+          the University of Guelph under the <strong>Food from Thought</strong>{" "}
+          initiative, and continued development is supported by{" "}
+          <strong>Genome Canada</strong>, with the{" "}
+          <strong>CS-DCC Data Hub</strong> supporting the work.
+          <br /> <br />
+          The University of Guelph maintains an active team of software
+          developers who continue to expand and refine the functionality across
+          the suite.
+        </p>
+      </FeatureSection>
+      <HeroSection
+        subtitle={
+          <>
+            <strong>Ready to Bring Semantic Tooling to Your Data Space?</strong>
+            <br />
+            Whether you want to deploy one tool or adopt a modular set across
+            your ecosystem, we can help you plan implementation, onboarding, and
+            integration.
+          </>
+        }
+      />
+      <Link to="/services" className="partner-card__button">
+        Partner with ADC
+      </Link>
     </main>
   );
 }

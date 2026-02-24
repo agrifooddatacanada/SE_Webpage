@@ -5,13 +5,13 @@
 .partner-card {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: var(--space-16) var(--container-padding);
+  padding: var(--space-16) var(--container-padding) 0;
 }
 
 .partner-card__inner {
   background-color: #c0efff;
   border: 2px solid var(--color-text);
-  padding: var(--space-16);
+  padding: var(--space-16) var(--container-padding) 0;
   max-width: 78rem;
   margin: 0 auto;
   text-align: center;
@@ -53,6 +53,7 @@
   border: black 1px solid;
   cursor: pointer;
   transition: background-color var(--transition-fast);
+  margin-bottom: var(--space-12);
 }
 
 .partner-card__button:hover {
