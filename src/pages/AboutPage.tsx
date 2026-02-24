@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
+import { PartnerCard } from "../components/sections/PartnerCard";
 import "./AboutPage.css";
 import { FEATURE_CARDS } from "../components/sections/HeroSection";
 
@@ -34,24 +35,23 @@ export function AboutPage() {
           teams or entire data ecosystems.
         </p>
       </FeatureSection>
-      <section className="partner-card">
-        <div className="partner-card__inner">
-          <p className="partner-card__text">
+      <PartnerCard
+        text={
+          <>
             <strong>Partner with us.</strong> The University of Guelph team is
             ready to collaborate with institutions, data spaces, labs and
             departments to deploy, operationalize, and extend Semantic Engine
             capabilities—especially through:
-          </p>
-          <ul className="partner-card__list">
-            <li>Co-applying on research grants</li>
-            <li>Using the Semantic Engine in your environment</li>
-            <li>Training and onboarding for researchers and administrators</li>
-          </ul>
-          <Link to="/services" className="partner-card__button">
-            Partner with ADC
-          </Link>
-        </div>
-      </section>
+          </>
+        }
+        listItems={[
+          "Co-applying on research grants",
+          "Using the Semantic Engine in your environment",
+          "Training and onboarding for researchers and administrators",
+        ]}
+        buttonText="Partner with ADC"
+        buttonHref="/services"
+      />
       <FeatureSection title="What the Semantic Engine Enables">
         <p>
           The Semantic Engine supports research data practices that reduce

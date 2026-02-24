@@ -1,0 +1,8 @@
+.data-spaces-page {
+  min-height: 100%;
+}
+
+
+.data-spaces-page > .partner-card {
+  margin-bottom: var(--space-12);
+}
