@@ -1,0 +1,96 @@
+.agreements-page {
+  min-height: 100%;
+}
+
+.agreements-page__content {
+  padding: var(--space-12) var(--container-padding);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.agreements-page__text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.agreements-page__text p {
+  margin-bottom: var(--space-4);
+}
+
+.agreements-page__text p:last-child {
+  margin-bottom: 0;
+}
+
+.agreements-page__highlight {
+  color: var(--color-hero-agreements);
+  font-weight: var(--font-semibold);
+}
+
+.agreements-page__cta {
+  display: block;
+  margin: var(--space-8) auto 0;
+  width: fit-content;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-card-agreements);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-hero-agreements);
+  transition: background-color var(--transition-fast);
+}
+
+.agreements-page__cta:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.agreements-page__screenshot {
+  width: 80%;
+  max-width: 100%;
+  display: block;
+  margin: var(--space-8) auto 0;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .agreements-page__content {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .agreements-page__text {
+    font-size: var(--text-sm);
+  }
+
+  .agreements-page__cta {
+    margin-top: var(--space-6);
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--text-sm);
+  }
+
+  .agreements-page__screenshot {
+    width: 100%;
+    margin-top: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .agreements-page__content {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .agreements-page__text p {
+    margin-bottom: var(--space-3);
+  }
+
+  .agreements-page__cta {
+    margin-top: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    width: 100%;
+    text-align: center;
+  }
+
+  .agreements-page__screenshot {
+    margin-top: var(--space-4);
+  }
+}
