@@ -12,7 +12,6 @@ const DROPDOWN_CLOSE_DELAY_MS = 200;
 
 export function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [bannerDismissed, setBannerDismissed] = useState(false);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
@@ -37,7 +36,7 @@ export function Header() {
   return (
     <header className="header">
       {/* Removable alert banner - home page only */}
-      {!bannerDismissed && location.pathname === '/' && (
+      {location.pathname === '/' && (
         <div className="header__banner">
           <div className="header__banner-inner">
             <p className="header__banner-text">
