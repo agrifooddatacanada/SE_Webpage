@@ -1,5 +1,6 @@
 import { SolutionHero } from "../components/sections/SolutionHero";
 import { FeatureSection } from "../components/sections/FeatureSection";
+import { imgPath } from "../utils/images";
 import "../styles/solution-page-layout.css";
 
 const RECORDS_URL = "https://zealous-mud-0d3297f0f.3.azurestaticapps.net/";
@@ -68,7 +69,7 @@ export function RecordsPage() {
         </FeatureSection>
         <FeatureSection
           title="Create your own record schemas"
-          imageSrc="/images/records_CreateYourOwnRecordSchemas.png"
+          imageSrc={imgPath('/images/records_CreateYourOwnRecordSchemas.png')}
           imageAlt="Create your own record schemas interface"
         >
           <p>

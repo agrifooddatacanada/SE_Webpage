@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import { PartnerCard } from "../components/sections/PartnerCard";
+import { imgPath } from "../utils/images";
 import "./AboutPage.css";
 import { FEATURE_CARDS } from "../components/sections/HeroSection";
 
@@ -21,7 +22,7 @@ export function AboutPage() {
       />
       <FeatureSection
         title="Add meaning to data"
-        imageSrc="/images/about_addMeaningToData.png"
+        imageSrc={imgPath('/images/about_addMeaningToData.png')}
         imageAlt="Add meaning to data interface"
       >
         <p>
@@ -121,7 +122,7 @@ export function AboutPage() {
       />
       <FeatureSection
         title="History and stewardship"
-        imageSrc="/images/about_history&stewardship.png "
+        imageSrc={imgPath('/images/about_history&stewardship.png')}
         imageAlt="History and stewardship interface"
       >
         <p>

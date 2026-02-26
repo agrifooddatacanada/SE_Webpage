@@ -1,4 +1,5 @@
 import { SolutionHero } from "../components/sections/SolutionHero";
+import { imgPath } from "../utils/images";
 import "../styles/solution-page-layout.css";
 import "./AgreementsPage.css";
 
@@ -51,7 +52,7 @@ export function AgreementsPage() {
           Try it out
         </a>
         <img
-          src="/images/agreement_drt.png"
+          src={imgPath('/images/agreement_drt.png')}
           alt="DRT screenshot"
           className="agreements-page__screenshot"
         />

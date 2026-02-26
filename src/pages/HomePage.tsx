@@ -1,6 +1,7 @@
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import { FEATURE_CARDS } from "../components/sections/HeroSection";
+import { imgPath } from "../utils/images";
 
 export function HomePage() {
   return (
@@ -13,7 +14,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Write clear data documentation"
-        imageSrc="/images/home_1.png"
+        imageSrc={imgPath('/images/home_1.png')}
         imageAlt="Data documentation interface"
       >
         <p>
@@ -28,7 +29,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Build data sharing agreements"
-        imageSrc="/images/home_2.png"
+        imageSrc={imgPath('/images/home_2.png')}
         imageAlt="Data sharing agreement form"
       >
         <p>
@@ -42,7 +43,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Write descriptive metadata"
-        imageSrc="/images/home_3.png"
+        imageSrc={imgPath('/images/home_3.png')}
         imageAlt="Metadata entry form"
       >
         <p>
@@ -72,7 +73,7 @@ export function HomePage() {
 
       <FeatureSection
         title="Standardize data collection"
-        imageSrc="/images/home_5.png"
+        imageSrc={imgPath('/images/home_5.png')}
         imageAlt="Standardized data collection"
       >
         <p>

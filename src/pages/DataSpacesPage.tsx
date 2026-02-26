@@ -2,6 +2,7 @@ import { HeroSection } from "../components/sections/HeroSection";
 import { PartnerCard } from "../components/sections/PartnerCard";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import { FEATURE_CARDS } from "../components/sections/HeroSection";
+import { imgPath } from "../utils/images";
 import "./DataSpacesPage.css";
 
 export function DataSpacesPage() {
@@ -13,7 +14,7 @@ export function DataSpacesPage() {
       />
       <FeatureSection
         title="What is a data space"
-        imageSrc="/images/DS_whatIsDS.png"
+        imageSrc={imgPath('/images/DS_whatIsDS.png')}
         imageAlt="Add meaning to data interface"
       >
         <p>
@@ -66,7 +67,7 @@ export function DataSpacesPage() {
       </div>
       <FeatureSection
         title="How the Semantic Engine Fits Into Data Spaces"
-        imageSrc="/images/DS_SE_fit.png"
+        imageSrc={imgPath('/images/DS_SE_fit.png')}
         imageAlt="How the Semantic Engine Fits Into Data Spaces"
       >
         <p>
@@ -96,7 +97,7 @@ export function DataSpacesPage() {
       />
       <FeatureSection
         title="Why Semantic Engine Tools Fit Naturally into Data Spaces"
-        imageSrc="/images/DS_SE_fitNaturally.png"
+        imageSrc={imgPath('/images/DS_SE_fitNaturally.png')}
         imageAlt="Why Semantic Engine Tools Fit Naturally into Data Spaces"
       >
         <p>

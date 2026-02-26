@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { imgPath } from '../../utils/images';
 import './Footer.css';
 
 export function Footer() {
@@ -12,7 +13,7 @@ export function Footer() {
             aria-label="Semantic Engine"
           >
             <img
-              src="/images/SemanticEngineLogo-800 (2).png"
+              src={imgPath('/images/SemanticEngineLogo-800 (2).png')}
               alt="Semantic Engine"
               className="footer__logo-img"
             />

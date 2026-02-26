@@ -1,5 +1,6 @@
 import { SolutionHero } from "../components/sections/SolutionHero";
 import { FeatureSection } from "../components/sections/FeatureSection";
+import { imgPath } from "../utils/images";
 import "../styles/solution-page-layout.css";
 
 const SE_SCHEMAS_URL = "https://www.semanticengine.org/";
@@ -62,7 +63,7 @@ export function SchemasPage() {
         </FeatureSection>
         <FeatureSection
           title="Verify data"
-          imageSrc="/images/schemas_VerifyData.png"
+          imageSrc={imgPath('/images/schemas_VerifyData.png')}
           imageAlt="Verify data interface"
         >
           <p>
@@ -79,7 +80,7 @@ export function SchemasPage() {
         </FeatureSection>
         <FeatureSection
           title="Standardize data collection"
-          imageSrc="/images/schemas_StandardizeDataCollection.png"
+          imageSrc={imgPath('/images/schemas_StandardizeDataCollection.png')}
           imageAlt="Standardize data collection interface"
         >
           <p>
@@ -94,7 +95,7 @@ export function SchemasPage() {
         </FeatureSection>
         <FeatureSection
           title="Archival schema documentation"
-          imageSrc="/images/schemas_ArchivalSchemaDocumentation.png"
+          imageSrc={imgPath('/images/schemas_ArchivalSchemaDocumentation.png')}
           imageAlt="Archival schema documentation interface"
         >
           <p>

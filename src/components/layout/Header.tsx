@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { imgPath } from '../../utils/images';
 import './Header.css';
 
 const SOLUTIONS_ITEMS = [
@@ -64,7 +65,7 @@ export function Header() {
             aria-label="Semantic Engine"
           >
             <img
-              src="/images/SemanticEngineLogo-800 (2).png"
+              src={imgPath('/images/SemanticEngineLogo-800 (2).png')}
               alt="Semantic Engine"
               className="header__logo-img"
             />
@@ -140,7 +141,7 @@ export function Header() {
             aria-label="AGRI-FOOD DATA Canada at the University of Guelph"
           >
             <img
-              src="/images/FOFR1002_ADC_Logo_Colour_Full (4).png"
+              src={imgPath('/images/FOFR1002_ADC_Logo_Colour_Full (4).png')}
               alt="AGRI-FOOD DATA Canada at the University of Guelph"
               className="header__partner-logo"
             />
