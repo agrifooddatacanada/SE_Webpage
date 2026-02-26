@@ -11,7 +11,7 @@ import { AboutPage } from './pages/AboutPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/SE_Webpage">
       <ScrollToTop />
       <Routes>
         <Route element={<PageLayout />}>
