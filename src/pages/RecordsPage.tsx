@@ -76,7 +76,7 @@ export function RecordsPage() {
             Use the Semantic Engine’s schema writer to define the structure of
             the metadata you want to collect.
             <br /> <br />
-            These schemas are used in the record‑creation tool, making data
+            These schemas are used in the Semantic Engine Records tool, making data
             entry consistent, intuitive, and error‑free.
           </p>
         </FeatureSection>
