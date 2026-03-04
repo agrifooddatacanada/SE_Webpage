@@ -22,7 +22,7 @@ export function SolutionHero({
       className={`solution-hero solution-hero--${theme}`}
       aria-labelledby="solution-hero-heading"
     >
-      <div className="solution-hero__heading">
+      <div className="solution-hero__content">
         {logoSrc && (
           <img
             src={logoSrc}
@@ -31,14 +31,14 @@ export function SolutionHero({
             aria-hidden
           />
         )}
-        <div className="solution-hero__heading-text">
-          <span className="solution-hero__title">{title}</span>
-          <span className="solution-hero__subtitle">{subtitle}</span>
+        <div className="solution-hero__heading">
+          <span className="solution-hero__label">{title}</span>
+          <span className="solution-hero__label-sub">{subtitle}</span>
         </div>
-      </div>
-      <div className="solution-hero__text">
-        <h1 id="solution-hero-heading">{heading}</h1>
-        <p>{description}</p>
+        <h1 id="solution-hero-heading" className="solution-hero__title">
+          {heading}
+        </h1>
+        <p className="solution-hero__subtitle">{description}</p>
       </div>
     </section>
   );

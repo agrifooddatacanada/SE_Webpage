@@ -1,38 +1,28 @@
 .solution-hero {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  color: var(--color-text-inverse);
-  padding: 0 var(--space-8) var(--space-12);
+  padding: var(--space-16) var(--container-padding);
+  width: 55%;
+  margin: 0 auto;
 }
 
 .solution-hero--schemas {
-  background-color: var(--color-card-schemas);
-  border: 3px solid var(--color-hero-schemas);
+  color: var(--color-card-schemas);
 }
 
 .solution-hero--agreements {
-  background-color: var(--color-card-agreements);
-  border: 3px solid var(--color-hero-agreements);
+  color: var(--color-card-agreements);
 }
 
 .solution-hero--records {
-  background-color: var(--color-card-records);
-  border: 3px solid var(--color-hero-records);
+  color: var(--color-card-records);
 }
 
-.solution-hero__heading {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-weight: var(--font-semibold);
-  letter-spacing: 0.04em;
-}
-
-.solution-hero__heading-text {
+.solution-hero__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .solution-hero__logo {
@@ -40,67 +30,75 @@
   height: auto;
 }
 
-.solution-hero__title {
+.solution-hero__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: center;
+  text-align: center;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.04em;
+}
+
+.solution-hero__label {
   font-size: clamp(1.05rem, 3.5vw, var(--text-4xl));
   font-weight: var(--font-bold);
   letter-spacing: 0.02em;
 }
 
-.solution-hero__subtitle {
-  font-size: clamp(var(--text-sm), 3vw, var(--text-lg));
-  font-weight: var(--font-semibold);
+.solution-hero__label-sub {
+  font-size: clamp(var(--text-base), 3vw, var(--text-2xl));
+  font-weight: var(--font-bold);
   letter-spacing: 0.06em;
 }
 
-.solution-hero__text {
-  padding-left: var(--space-12);
-  margin-left: var(--space-12);
-  max-width: 36ch;
+.solution-hero__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-normal);
+  text-align: center;
+  margin: 0 0 var(--space-1);
 }
 
-.solution-hero__text h1 {
+.solution-hero__subtitle {
+  font-size: var(--text-xl);
+  text-align: center;
+  max-width: 42rem;
   margin: 0;
-  font-size: clamp(1.1rem, 6vw, var(--text-3xl));
-  font-weight: var(--font-semibold);
-  white-space: nowrap;
-}
-
-.solution-hero__text p {
-  margin: var(--space-2) 0 0;
-  font-size: clamp(0.95rem, 1.8vw, var(--text-lg));
-  color: rgba(255, 255, 255, 0.84);
-  line-height: var(--leading-normal);
+  line-height: var(--leading-relaxed);
+  opacity: 0.94;
 }
 
 @media (max-width: 768px) {
   .solution-hero {
-    padding: 0 var(--space-4) var(--space-8);
-    gap: var(--space-4);
+    padding: var(--space-12) var(--space-4);
   }
 
-  .solution-hero__heading {
-    gap: var(--space-2);
+  .solution-hero__title {
+    font-size: var(--text-3xl);
   }
 
-  .solution-hero__text {
-    padding-left: 0;
-    margin-left: 0;
-    max-width: none;
-  }
-
-  .solution-hero__text h1 {
-    white-space: normal;
-    font-size: var(--text-2xl);
-  }
-
-  .solution-hero__text p {
-    font-size: var(--text-base);
+  .solution-hero__subtitle {
+    font-size: var(--text-lg);
   }
 
   .solution-hero__logo {
     width: clamp(60px, 12vw, 100px);
   }
 
+  .solution-hero__label {
+    font-size: var(--text-2xl);
+  }
+
+  .solution-hero__label-sub {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-hero {
+    padding: var(--space-8) var(--space-4);
+  }
+
   .solution-hero__title {
     font-size: var(--text-2xl);
   }
@@ -108,36 +106,16 @@
   .solution-hero__subtitle {
     font-size: var(--text-base);
   }
-}
-
-@media (max-width: 480px) {
-  .solution-hero {
-    padding: 0 var(--space-4) var(--space-6);
-    gap: var(--space-3);
-  }
-
-  .solution-hero__heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .solution-hero__text h1 {
-    font-size: var(--text-xl);
-  }
-
-  .solution-hero__text p {
-    font-size: var(--text-sm);
-  }
 
   .solution-hero__logo {
     width: clamp(50px, 15vw, 80px);
   }
 
-  .solution-hero__title {
+  .solution-hero__label {
     font-size: var(--text-xl);
   }
 
-  .solution-hero__subtitle {
+  .solution-hero__label-sub {
     font-size: var(--text-sm);
   }
 }

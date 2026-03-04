@@ -7,6 +7,8 @@ import "./AgreementsPage.css";
 const DRT_DEMO_URL =
   "https://github.com/ClimateSmartAgCollab/DRT_Design_Document/blob/main/README.md";
 
+const DRT_MAIN_PAGE_URL = "https://agreements.semanticengine.org/";
+
 export function AgreementsPage() {
   return (
     <div className="solution-page agreements-page">
@@ -46,7 +48,7 @@ export function AgreementsPage() {
           </p>
         </div>
         <a
-          href={DRT_DEMO_URL}
+          href={DRT_MAIN_PAGE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="solution-page__cta solution-page__cta--agreements"
@@ -123,6 +125,20 @@ export function AgreementsPage() {
             work.
           </p>
         </FeatureSection>
+
+        <section className="agreements-page__partners">
+          <p className="agreements-page__partners-subheading">Our Partners</p>
+          <div className="agreements-page__partners-grid">
+            <div className="agreements-page__partner-box">
+              Agri-Food Data Canada
+            </div>
+            <div className="agreements-page__partner-box">Université Laval</div>
+            <div className="agreements-page__partner-box">
+              Simon Fraser University
+            </div>
+            <div className="agreements-page__partner-box">CS-DCC</div>
+          </div>
+        </section>
       </main>
     </div>
   );

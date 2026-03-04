@@ -25,3 +25,61 @@
     margin-top: var(--space-4);
   }
 }
+
+/* Our Partners section */
+.agreements-page__partners {
+  margin-top: var(--space-16);
+  padding-top: var(--space-12);
+  text-align: center;
+}
+
+
+.agreements-page__partners-subheading {
+  font-size: var(--text-base);
+  color: var(--color-hero-agreements);
+  margin: 0 0 var(--space-8);
+  text-align: left;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--container-padding);
+}
+
+.agreements-page__partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: center;
+  align-items: stretch;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.agreements-page__partner-box {
+  flex: 1 1 180px;
+  min-width: 160px;
+  max-width: 280px;
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-bg);
+  border: 2px dotted var(--color-hero-agreements);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .agreements-page__partners-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .agreements-page__partner-box {
+    max-width: 100%;
+    width: 100%;
+  }
+}
