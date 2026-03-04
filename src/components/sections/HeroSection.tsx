@@ -38,7 +38,7 @@ export const FEATURE_CARDS: FeatureCard[] = [
     description:
       "Describe in custom terms how you want to make your work available.​",
     buttonText: "Demo Agreements",
-    buttonHref: "https://drt-test.canadacentral.cloudapp.azure.com/",
+    buttonHref: "https://agreements.semanticengine.org/",
     learnMoreHref: "/solutions/agreements",
     color: "agreements",
   },
@@ -49,7 +49,7 @@ export const FEATURE_CARDS: FeatureCard[] = [
     description:
       "Catalogue your data, your project and more in a machine-readable format.",
     buttonText: "Write your own record",
-    buttonHref: "https://zealous-mud-0d3297f0f.3.azurestaticapps.net/",
+    buttonHref: "https://records.semanticengine.org/",
     learnMoreHref: "/solutions/records",
     color: "records",
   },
