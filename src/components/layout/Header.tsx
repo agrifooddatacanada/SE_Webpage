@@ -148,9 +148,7 @@ export function Header() {
         </div>
       </div>
 
-      {!location.pathname.startsWith("/solutions") && (
-        <div className="header__divider" aria-hidden />
-      )}
+      <div className="header__divider" aria-hidden />
     </header>
   );
 }
