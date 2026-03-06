@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./HeroSection.css";
 
 export interface FeatureCard {
@@ -19,42 +20,6 @@ interface HeroSectionProps {
   showButtons?: boolean;
 }
 
-export const FEATURE_CARDS: FeatureCard[] = [
-  {
-    id: "schemas",
-    title: "Schemas",
-    sectionLabel: "Semantic Engine",
-    description:
-      "Describe your data in a machine-readable format. No coding, just fill in your information.",
-    buttonText: "Write your own schema",
-    buttonHref: "https://www.semanticengine.org/",
-    learnMoreHref: "/solutions/schemas",
-    color: "schemas",
-  },
-  {
-    id: "agreements",
-    title: "Agreements",
-    sectionLabel: "Semantic Engine",
-    description:
-      "Describe in custom terms how you want to make your work available.​",
-    buttonText: "Demo Agreements",
-    buttonHref: "https://agreements.semanticengine.org/",
-    learnMoreHref: "/solutions/agreements",
-    color: "agreements",
-  },
-  {
-    id: "records",
-    title: "Records",
-    sectionLabel: "Semantic Engine",
-    description:
-      "Catalogue your data, your project and more in a machine-readable format.",
-    buttonText: "Write your own record",
-    buttonHref: "https://records.semanticengine.org/",
-    learnMoreHref: "/solutions/records",
-    color: "records",
-  },
-];
-
 export function HeroSection({
   title,
   subtitle,
@@ -62,6 +27,8 @@ export function HeroSection({
   descriptions,
   showButtons = true,
 }: HeroSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <section className="hero">
       <div className="hero__content">
@@ -76,7 +43,7 @@ export function HeroSection({
               >
                 <div className="hero__card-header">
                   <span className="hero__card-label">
-                    {card.sectionLabel ?? "Semantic Engine"}
+                    {card.sectionLabel ?? t("cards.sectionLabel")}
                   </span>
                   <h2 className="hero__card-title">{card.title}</h2>
                 </div>
@@ -100,7 +67,7 @@ export function HeroSection({
                   )
                 )}
                 <Link to={card.learnMoreHref} className="hero__card-link">
-                  Learn more
+                  {t("common.learnMore")}
                 </Link>
               </div>
             ))}

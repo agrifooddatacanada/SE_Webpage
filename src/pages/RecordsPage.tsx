@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { SolutionHero } from "../components/sections/SolutionHero";
 import { FeatureSection } from "../components/sections/FeatureSection";
 import { imgPath } from "../utils/images";
@@ -6,26 +7,21 @@ import "../styles/solution-page-layout.css";
 const RECORDS_URL = "https://zealous-mud-0d3297f0f.3.azurestaticapps.net/";
 
 export function RecordsPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="solution-page records-page">
       <SolutionHero
-        title="Semantic Engine"
-        subtitle="Records"
-        heading="Describe your work"
-        description="Write descriptive metadata following a variety of standards to describe your work"
+        title={t("records.hero.title")}
+        subtitle={t("records.hero.subtitle")}
+        heading={t("records.hero.heading")}
+        description={t("records.hero.description")}
         theme="records"
       />
       <main className="solution-page__content">
         <div className="solution-page__text">
-          <p>
-            Write machine-readable metadata records that describe your work
-            following many data standards.
-          </p>
-          <p>
-            Describe your projects, datasets, schemas, sample libraries and more
-            and integrate the records into existing infrastructure and data
-            catalogues.
-          </p>
+          <p>{t("records.intro.p1")}</p>
+          <p>{t("records.intro.p2")}</p>
         </div>
         <a
           href={RECORDS_URL}
@@ -33,52 +29,34 @@ export function RecordsPage() {
           rel="noopener noreferrer"
           className="solution-page__cta"
         >
-          Try it out
+          {t("common.tryItOut")}
         </a>
         <div className="solution-page__partner-card solution-page__partner-card--records">
           <span className="solution-page__partner-card-title">
-            For Data Spaces
+            {t("common.forDataSpaces")}
           </span>
           <br /> <br />
           <span className="solution-page__partner-card-text">
-            Research groups can create their own metadata templates using the
-            Semantic Engine’s Schema tool. These templates guide easy‑to‑use
-            forms in the Records tool that help people write accurate,
-            standardized, machine‑readable information.
+            {t("records.partnerCard.p1")}
           </span>
           <br />
           <span className="solution-page__partner-card-text">
-            Metadata records generated through the Records tool can be
-            incorporated into other data space infrastructure such as catalogues
-            for improved searching.
+            {t("records.partnerCard.p2")}
           </span>
         </div>
         <FeatureSection
-          title="Write clear, machine-readable metadata records"
+          title={t("records.features.metadata.title")}
           imageSrc={imgPath('/images/records_WriteClearMachineReadableMetadataRecords.png')}
           imageAlt="Write clear data documentation interface"
         >
-          <p>
-            Write structured, standards‑based metadata that accurately describes
-            your work.
-            <br /> <br />
-            The Semantic Engine helps you create records for projects, datasets,
-            schemas, sample libraries, and more—ready to integrate with your
-            organization’s existing systems and data catalogues.
-          </p>
+          <p>{t("records.features.metadata.body")}</p>
         </FeatureSection>
         <FeatureSection
-          title="Create your own record schemas"
+          title={t("records.features.schemas.title")}
           imageSrc={imgPath('/images/records_CreateYourOwnRecordSchemas.png')}
           imageAlt="Create your own record schemas interface"
         >
-          <p>
-            Use the Semantic Engine’s schema writer to define the structure of
-            the metadata you want to collect.
-            <br /> <br />
-            These schemas are used in the Semantic Engine Records tool, making data
-            entry consistent, intuitive, and error‑free.
-          </p>
+          <p>{t("records.features.schemas.body")}</p>
         </FeatureSection>
       </main>
     </div>

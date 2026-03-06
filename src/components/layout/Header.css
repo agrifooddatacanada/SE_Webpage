@@ -172,6 +172,60 @@
   min-width: 0;
 }
 
+.header__language-switcher {
+  position: relative;
+  background: var(--color-bg);
+  padding: var(--space-1) var(--space-1);
+}
+
+.header__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.header__language-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-7) var(--space-1) var(--space-3);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  line-height: 1.5;
+  min-width: 3.5rem;
+}
+
+.header__language-select:hover {
+  background: var(--color-bg-alt);
+}
+
+.header__language-select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.header__language-arrow {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 .header__partner-logo {
   height: 5rem;
   width: auto;

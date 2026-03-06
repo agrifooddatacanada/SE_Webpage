@@ -1,20 +1,22 @@
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { imgPath } from "../../utils/images";
 import "./Header.css";
 
-const SOLUTIONS_ITEMS = [
-  { path: "/solutions/schemas", label: "Schemas" },
-  { path: "/solutions/agreements", label: "Agreements" },
-  { path: "/solutions/records", label: "Records" },
-];
-
 const DROPDOWN_CLOSE_DELAY_MS = 200;
 
 export function Header() {
+  const { t, i18n } = useTranslation();
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+  const currentLanguage = i18n.resolvedLanguage?.startsWith("fr") ? "fr" : "en";
+  const solutionsItems = [
+    { path: "/solutions/schemas", label: t("nav.schemas") },
+    { path: "/solutions/agreements", label: t("nav.agreements") },
+    { path: "/solutions/records", label: t("nav.records") },
+  ];
 
   const openSolutions = () => {
     if (closeTimeoutRef.current) {
@@ -43,8 +45,7 @@ export function Header() {
         <div className="header__banner">
           <div className="header__banner-inner">
             <p className="header__banner-text">
-              Semantic Engine schema users: access our schema writing tool
-              directly at{" "}
+              {t("header.bannerPrefix")}{" "}
               <a
                 href="https://www.semanticengine.org/"
                 target="_blank"
@@ -74,14 +75,14 @@ export function Header() {
               to="/"
               className={`header__link ${isActive("/") ? "header__link--active" : ""}`}
             >
-              Home
+              {t("nav.home")}
             </Link>
 
             <Link
               to="/data-spaces"
               className={`header__link ${isActive("/data-spaces") ? "header__link--active" : ""}`}
             >
-              Data Spaces
+              {t("nav.dataSpaces")}
             </Link>
 
             <div
@@ -95,14 +96,14 @@ export function Header() {
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
               >
-                Solutions
+                {t("nav.solutions")}
                 <span className="header__dropdown-arrow" aria-hidden>
                   ▼
                 </span>
               </button>
               {solutionsOpen && (
                 <ul className="header__dropdown-menu" role="menu">
-                  {SOLUTIONS_ITEMS.map((item) => (
+                  {solutionsItems.map((item) => (
                     <li key={item.path} role="none">
                       <Link
                         to={item.path}
@@ -121,16 +122,39 @@ export function Header() {
               to="/services"
               className={`header__link ${isActive("/services") ? "header__link--active" : ""}`}
             >
-              Services
+              {t("nav.services")}
             </Link>
 
             <Link
               to="/about"
               className={`header__link ${isActive("/about") ? "header__link--active" : ""}`}
             >
-              About
+              {t("nav.about")}
             </Link>
           </nav>
+
+          <div className="header__language-switcher">
+            <label htmlFor="header-language-select" className="header__sr-only">
+              {t("language.label")}
+            </label>
+            <select
+              id="header-language-select"
+              className="header__language-select"
+              aria-label={t("language.switcherAriaLabel")}
+              value={currentLanguage}
+              onChange={(event) => i18n.changeLanguage(event.target.value)}
+            >
+              <option value="en" lang="en">
+                {t("language.english")}
+              </option>
+              <option value="fr" lang="fr">
+                {t("language.french")}
+              </option>
+            </select>
+            <span className="header__dropdown-arrow header__language-arrow" aria-hidden>
+              ▼
+            </span>
+          </div>
 
           <a
             href="https://agrifooddatacanada.ca"

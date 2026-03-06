@@ -1,89 +1,64 @@
+import { useTranslation } from "react-i18next";
 import { HeroSection } from "../components/sections/HeroSection";
 import { FeatureSection } from "../components/sections/FeatureSection";
-import { FEATURE_CARDS } from "../components/sections/HeroSection";
+import { getFeatureCards } from "../content/featureCards";
 import { imgPath } from "../utils/images";
 
 export function HomePage() {
+  const { t } = useTranslation();
+  const featureCards = getFeatureCards(t);
+
   return (
     <main className="home-page">
       <HeroSection
-        title="The Semantic Engine"
-        subtitle="Modular tools that add meaning to data and grow your research Data Space"
-        cards={FEATURE_CARDS}
+        title={t("home.heroTitle")}
+        subtitle={t("home.heroSubtitle")}
+        cards={featureCards}
       />
 
       <FeatureSection
-        title="Write clear data documentation"
+        title={t("home.features.clearDocumentation.title")}
         imageSrc={imgPath('/images/home_1.png')}
         imageAlt="Data documentation interface"
       >
-        <p>
-          Schemas work together with a dataset and describe data features such
-          as column names, units, and descriptions etc.
-        </p>
-        <p>
-          Using the schema tool of the Semantic Engine you can write human- and
-          machine-readable schemas.
-        </p>
+        <p>{t("home.features.clearDocumentation.p1")}</p>
+        <p>{t("home.features.clearDocumentation.p2")}</p>
       </FeatureSection>
 
       <FeatureSection
-        title="Build data sharing agreements"
+        title={t("home.features.agreements.title")}
         imageSrc={imgPath('/images/home_2.png')}
         imageAlt="Data sharing agreement form"
       >
-        <p>
-          Running your own instance of the Data Request Tracker lets you manage
-          requests for your restricted data with customized questionnaires.
-        </p>
-        <p>
-          Use the answers to fill in your customized data agreement templates.
-        </p>
+        <p>{t("home.features.agreements.p1")}</p>
+        <p>{t("home.features.agreements.p2")}</p>
       </FeatureSection>
 
       <FeatureSection
-        title="Write descriptive metadata"
+        title={t("home.features.metadata.title")}
         imageSrc={imgPath('/images/home_3.png')}
         imageAlt="Metadata entry form"
       >
-        <p>
-          Describe your dataset, your research project, your sample library and
-          more.
-        </p>
-        <p>
-          Generate a metadata record in a machine-readable format by filling out
-          forms.
-        </p>
-        <p>
-          Customize the metadata records you generate when you run your own
-          instance of our tool.
-        </p>
+        <p>{t("home.features.metadata.p1")}</p>
+        <p>{t("home.features.metadata.p2")}</p>
+        <p>{t("home.features.metadata.p3")}</p>
       </FeatureSection>
 
       <FeatureSection
-        title="Collect verified data"
+        title={t("home.features.verifiedData.title")}
         imageSrc={imgPath('/images/home4.png')}
         imageAlt="Data verification interface"
       >
-        <p>
-          Customize the Semantic Engine tools to send verified data into your
-          ETL pipelines.
-        </p>
+        <p>{t("home.features.verifiedData.p1")}</p>
       </FeatureSection>
 
       <FeatureSection
-        title="Standardize data collection"
+        title={t("home.features.standardizeCollection.title")}
         imageSrc={imgPath('/images/home_5.png')}
         imageAlt="Standardized data collection"
       >
-        <p>
-          Generate standardized data entry sheets in Excel with your schema
-          documentation directly included.
-        </p>
-        <p>
-          Data collectors can reference the data documentation right in the
-          Excel file.
-        </p>
+        <p>{t("home.features.standardizeCollection.p1")}</p>
+        <p>{t("home.features.standardizeCollection.p2")}</p>
       </FeatureSection>
     </main>
   );
