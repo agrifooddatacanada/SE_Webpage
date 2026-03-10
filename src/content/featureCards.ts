@@ -9,7 +9,7 @@ export const getFeatureCards = (t: Translator): FeatureCard[] => [
     sectionLabel: t("cards.sectionLabel"),
     description: t("cards.schemas.description"),
     buttonText: t("cards.schemas.buttonText"),
-    buttonHref: "https://www.semanticengine.org/",
+    buttonHref: "https://schemas.semanticengine.org/",
     learnMoreHref: "/solutions/schemas",
     color: "schemas",
   },

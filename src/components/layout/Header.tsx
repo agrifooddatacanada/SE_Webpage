@@ -47,7 +47,7 @@ export function Header() {
             <p className="header__banner-text">
               {t("header.bannerPrefix")}{" "}
               <a
-                href="https://www.semanticengine.org/"
+                href="https://schemas.semanticengine.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__banner-link"

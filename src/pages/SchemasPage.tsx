@@ -4,7 +4,7 @@ import { FeatureSection } from "../components/sections/FeatureSection";
 import { imgPath } from "../utils/images";
 import "../styles/solution-page-layout.css";
 
-const SE_SCHEMAS_URL = "https://www.semanticengine.org/";
+const SE_SCHEMAS_URL = "https://schemas.semanticengine.org/";
 
 export function SchemasPage() {
   const { t } = useTranslation();
