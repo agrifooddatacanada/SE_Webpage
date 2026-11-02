@@ -18,51 +18,147 @@
 
 .footer__inner {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: var(--space-6) var(--container-padding);
-  min-height: 5rem;
+  padding: var(--space-8) var(--container-padding) var(--space-10);
 }
 
-.footer__partner {
+.footer__credits {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.footer__brand:hover {
+  opacity: 0.9;
+}
+
+.footer__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.footer__label {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--color-text);
+}
+
+.footer__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.footer__logo-link {
+  display: inline-flex;
   align-items: center;
   flex-shrink: 0;
 }
 
-.footer__partner:hover {
+.footer__logo-link:hover {
   opacity: 0.9;
 }
 
 .footer__logo-img {
-  height: 3.5rem;
   width: auto;
+  height: auto;
   min-width: 0;
   object-fit: contain;
 }
 
-/* Responsive: tablet and below */
+.footer__logo-img--adc {
+  width: 200px;
+}
+
+.footer__logo-img--cfref {
+  height: 7.5rem;
+}
+
+.footer__logo-img--genome {
+  height: 5.25rem;
+}
+
+.footer__logo-img--ontario {
+  height: 2.75rem;
+  /* Wordmark is white in the source SVG; invert it for the light footer. */
+  filter: invert(1);
+}
+
+.footer__logo-img--se {
+  height: 3.5rem;
+}
+
 @media (max-width: 768px) {
   .footer__inner {
-    padding: var(--space-4) var(--space-4);
-    min-height: 4rem;
+    padding: var(--space-6) var(--space-4) var(--space-8);
+    gap: var(--space-6);
   }
 
-  .footer__logo-img {
+  .footer__logos {
+    gap: var(--space-6);
+  }
+
+  .footer__logo-img--adc {
+    width: 160px;
+  }
+
+  .footer__logo-img--cfref {
+    height: 5.5rem;
+  }
+
+  .footer__logo-img--genome {
+    height: 4rem;
+  }
+
+  .footer__logo-img--ontario {
+    height: 2.25rem;
+  }
+
+  .footer__logo-img--se {
     height: 2.5rem;
   }
 }
 
-/* Responsive: mobile */
 @media (max-width: 480px) {
   .footer__inner {
-    padding: var(--space-3) var(--space-4);
-    min-height: 3.5rem;
+    padding: var(--space-5) var(--space-4) var(--space-6);
+    gap: var(--space-5);
   }
 
-  .footer__logo-img {
+  .footer__logo-img--adc {
+    width: 140px;
+  }
+
+  .footer__logo-img--cfref {
+    height: 4.5rem;
+  }
+
+  .footer__logo-img--genome {
+    height: 3.25rem;
+  }
+
+  .footer__logo-img--ontario {
+    height: 2rem;
+  }
+
+  .footer__logo-img--se {
     height: 2rem;
   }
 }

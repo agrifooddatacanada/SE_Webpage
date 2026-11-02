@@ -11,6 +11,10 @@ const fr = {
     forDataSpaces: "Pour les espaces de données",
     partnerWithAdc: "Collaborer avec ADC",
   },
+  footer: {
+    poweredBy: "Propulsé par",
+    supportedBy: "Soutenu par",
+  },
   nav: {
     home: "Accueil",
     dataSpaces: "Espaces de données",
