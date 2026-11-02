@@ -32,6 +32,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-8);
+  flex: 1 1 36rem;
+  min-width: 0;
 }
 
 .footer__brand {
@@ -50,6 +52,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3);
+  width: 100%;
 }
 
 .footer__label {
@@ -60,16 +63,19 @@
 }
 
 .footer__logos {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   align-items: center;
-  gap: var(--space-8);
+  justify-items: start;
+  column-gap: var(--space-6);
+  row-gap: var(--space-4);
 }
 
 .footer__logo-link {
   display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .footer__logo-link:hover {
@@ -84,25 +90,29 @@
 }
 
 .footer__logo-img--adc {
-  width: 200px;
+  width: 168px;
+}
+
+.footer__logo-img--genome,
+.footer__logo-img--genome-bc,
+.footer__logo-img--ontario-genomics,
+.footer__logo-img--genome-quebec {
+  height: 3.75rem;
+  max-width: 10rem;
 }
 
 .footer__logo-img--cfref {
-  height: 7.5rem;
-}
-
-.footer__logo-img--genome {
   height: 5.25rem;
 }
 
 .footer__logo-img--ontario {
-  height: 2.75rem;
+  height: 2.15rem;
   /* Wordmark is white in the source SVG; invert it for the light footer. */
   filter: invert(1);
 }
 
 .footer__logo-img--se {
-  height: 3.5rem;
+  height: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -112,27 +122,32 @@
   }
 
   .footer__logos {
-    gap: var(--space-6);
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
   }
 
   .footer__logo-img--adc {
-    width: 160px;
+    width: 140px;
+  }
+
+  .footer__logo-img--genome,
+  .footer__logo-img--genome-bc,
+  .footer__logo-img--ontario-genomics,
+  .footer__logo-img--genome-quebec {
+    height: 3.15rem;
+    max-width: 8.5rem;
   }
 
   .footer__logo-img--cfref {
-    height: 5.5rem;
-  }
-
-  .footer__logo-img--genome {
-    height: 4rem;
+    height: 4.4rem;
   }
 
   .footer__logo-img--ontario {
-    height: 2.25rem;
+    height: 1.9rem;
   }
 
   .footer__logo-img--se {
-    height: 2.5rem;
+    height: 2.25rem;
   }
 }
 
@@ -142,23 +157,42 @@
     gap: var(--space-5);
   }
 
+  .footer__logos {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--space-3);
+  }
+
+  .footer__logos .footer__logo-link {
+    width: 100%;
+  }
+
+  .footer__logos .footer__logo-img {
+    width: 100%;
+    object-position: left center;
+  }
+
   .footer__logo-img--adc {
-    width: 140px;
+    width: 120px;
+  }
+
+  .footer__logo-img--genome,
+  .footer__logo-img--genome-bc,
+  .footer__logo-img--ontario-genomics,
+  .footer__logo-img--genome-quebec {
+    height: 2.75rem;
+    max-width: none;
   }
 
   .footer__logo-img--cfref {
-    height: 4.5rem;
-  }
-
-  .footer__logo-img--genome {
-    height: 3.25rem;
+    height: 3.75rem;
   }
 
   .footer__logo-img--ontario {
-    height: 2rem;
+    height: 1.7rem;
   }
 
   .footer__logo-img--se {
-    height: 2rem;
+    height: 1.75rem;
   }
 }

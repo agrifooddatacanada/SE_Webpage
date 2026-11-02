@@ -3,6 +3,45 @@ import { useTranslation } from 'react-i18next';
 import { imgPath } from '../../utils/images';
 import './Footer.css';
 
+const supportedBy = [
+  {
+    href: 'https://www.genomecanada.ca/',
+    src: '/images/genome-canada.jpg',
+    alt: 'Genome Canada',
+    className: 'footer__logo-img--genome',
+  },
+  {
+    href: 'https://www.genomebc.ca/',
+    src: '/images/genome-bc.jpg',
+    alt: 'Genome British Columbia',
+    className: 'footer__logo-img--genome-bc',
+  },
+  {
+    href: 'https://www.ontariogenomics.ca/',
+    src: '/images/ontario-genomics.png',
+    alt: 'Ontario Genomics',
+    className: 'footer__logo-img--ontario-genomics',
+  },
+  {
+    href: 'https://genomequebec.com/',
+    src: '/images/genome-quebec.svg',
+    alt: 'Génome Québec',
+    className: 'footer__logo-img--genome-quebec',
+  },
+  {
+    href: 'https://www.cfref-apogee.gc.ca/',
+    src: '/images/canada-first-research-excellence-fund.png',
+    alt: 'Canada First Research Excellence Fund',
+    className: 'footer__logo-img--cfref',
+  },
+  {
+    href: 'https://www.ontario.ca/',
+    src: '/images/ontario-logo--desktop.svg',
+    alt: 'Government of Ontario',
+    className: 'footer__logo-img--ontario',
+  },
+];
+
 export function Footer() {
   const { t } = useTranslation();
 
@@ -30,42 +69,21 @@ export function Footer() {
           <div className="footer__block">
             <p className="footer__label">{t('footer.supportedBy')}</p>
             <div className="footer__logos">
-              <a
-                href="https://www.cfref-apogee.gc.ca/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer__logo-link"
-              >
-                <img
-                  src={imgPath('/images/canada-first-research-excellence-fund.png')}
-                  alt="Canada First Research Excellence Fund"
-                  className="footer__logo-img footer__logo-img--cfref"
-                />
-              </a>
-              <a
-                href="https://www.genomecanada.ca/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer__logo-link"
-              >
-                <img
-                  src={imgPath('/images/genome-canada.jpg')}
-                  alt="Genome Canada"
-                  className="footer__logo-img footer__logo-img--genome"
-                />
-              </a>
-              <a
-                href="https://www.ontario.ca/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer__logo-link"
-              >
-                <img
-                  src={imgPath('/images/ontario-logo--desktop.svg')}
-                  alt="Government of Ontario"
-                  className="footer__logo-img footer__logo-img--ontario"
-                />
-              </a>
+              {supportedBy.map((logo) => (
+                <a
+                  key={logo.href}
+                  href={logo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer__logo-link"
+                >
+                  <img
+                    src={imgPath(logo.src)}
+                    alt={logo.alt}
+                    className={`footer__logo-img ${logo.className}`}
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>
